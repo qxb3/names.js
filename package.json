@@ -1,0 +1,17 @@
+{
+  "name": "random-names",
+  "version": "1.0.0",
+  "description": "A simple random name generator",
+  "author": "qxb3",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint \"./**/*.js\"",
+    "start": "npm run lint && node src/index.js",
+    "dev": "nodemon --exec \"npm run lint && node src/index.js\""
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "nodemon": "^2.0.15"
+  }
+}
