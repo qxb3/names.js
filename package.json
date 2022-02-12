@@ -2,7 +2,7 @@
   "name": "random-names",
   "version": "1.0.0",
   "description": "A simple random name generator",
-  "author": "qxb3",
+  "author": "qxbthree",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
