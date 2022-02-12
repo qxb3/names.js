@@ -1,9 +1,14 @@
 {
   "name": "names.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple random name generator",
+  "repository": {
+    "url": "https://github.com/qxb3/names.js",
+    "type": "git"
+  },
   "author": "qxb3",
   "license": "MIT",
+  "keywords": ["random name generator", "random", "names"],
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint \"./**/*.js\"",
