@@ -8,6 +8,14 @@ const femaleNames = readFileSync(join(__dirname, '../../names/humans/male.txt'),
 const surnames = readFileSync(join(__dirname, '../../names/humans/male.txt'), 'utf-8').split('\n')
 
 module.exports = (gender, count) => {
+  if (!gender) {
+    throw new Error('gender is required')
+  }
+
+  if (typeof gender !== 'string') {
+    throw new Error('gender needs to be typeof string')
+  }
+
   if (!ignoreCase(gender, 'male') && !ignoreCase(gender, 'female')) {
     throw new Error(`INVALID_TYPE ${gender} is not a valid gender`)
   }
