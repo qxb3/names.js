@@ -15,7 +15,9 @@ npm install names.js
 `Generating a random human name:`
 ```js
 const { generateHumanName } = require('names.js')
+
 generateHumanName('male', 10)
+generateHumanName('female', 10)
 ```
 
 `Generating random animal name:`
