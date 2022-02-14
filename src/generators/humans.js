@@ -13,11 +13,11 @@ module.exports = (gender, count) => {
   }
 
   if (typeof gender !== 'string') {
-    throw new Error('gender needs to be typeof string')
+    throw new TypeError('gender needs to be typeof string')
   }
 
   if (!ignoreCase(gender, 'male') && !ignoreCase(gender, 'female')) {
-    throw new Error(`INVALID_TYPE ${gender} is not a valid gender`)
+    throw new TypeError(`${gender} is not a valid gender`)
   }
 
   if (count === undefined) {
