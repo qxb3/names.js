@@ -12,7 +12,7 @@ npm install names.js
 
 ### How to use
 
-`Generating a random human name:`
+`Generating a 10 random male and female name:`
 ```js
 const { generateHumanName } = require('names.js')
 
@@ -20,15 +20,17 @@ generateHumanName('male', 10)
 generateHumanName('female', 10)
 ```
 
-`Generating random animal name:`
+`Generating 10 random animal name:`
 ```js
 const { generateAnimalName } = require('names.js')
+
 generateAnimalName(10)
 ```
 
-`Generating random pokemon name:`
+`Generating 10 random pokemon name:`
 ```js
 const { generatePokemonName } = require('names.js')
+
 generatePokemonName(10)
 ```
 
