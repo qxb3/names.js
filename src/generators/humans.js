@@ -3,9 +3,12 @@ const { join } = require('path')
 
 const { randomNumber, ignoreCase } = require('../lib/utils')
 
-const maleNames = readFileSync(join(__dirname, '../../names/humans/male.txt'), 'utf-8').split('\n')
-const femaleNames = readFileSync(join(__dirname, '../../names/humans/male.txt'), 'utf-8').split('\n')
+const genderNames = {
+  male: readFileSync(join(__dirname, '../../names/humans/male.txt'), 'utf-8').split('\n'),
+  female: readFileSync(join(__dirname, '../../names/humans/male.txt'), 'utf-8').split('\n')
+}
 const surnames = readFileSync(join(__dirname, '../../names/humans/male.txt'), 'utf-8').split('\n')
+const genders = ['male', 'female']
 
 module.exports = (gender, count) => {
   if (!gender) {
@@ -16,7 +19,7 @@ module.exports = (gender, count) => {
     throw new TypeError('gender needs to be typeof string')
   }
 
-  if (!ignoreCase(gender, 'male') && !ignoreCase(gender, 'female')) {
+  if (!genders.includes(gender.toLowerCase()) && !ignoreCase(gender, 'any')) {
     throw new TypeError(`${gender} is not a valid gender`)
   }
 
@@ -26,7 +29,8 @@ module.exports = (gender, count) => {
 
   const names = []
   for (let i = 0; i < count; i++) {
-    const name = ignoreCase(gender, 'male') ? maleNames[randomNumber(0, maleNames.length)] : femaleNames[randomNumber(0, femaleNames.length)]
+    const any = genderNames[genders[randomNumber(0, genders.length-1)]]
+    const name = ignoreCase(gender, 'any') ? any[randomNumber(0, any.length)] : genderNames[gender][randomNumber(0, genderNames[gender].length)]
     const surname = surnames[randomNumber(0, surnames.length)]
 
     names.push(`${name} ${surname}`)
