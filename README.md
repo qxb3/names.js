@@ -18,6 +18,7 @@ const { generateHumanName } = require('names.js')
 
 generateHumanName('male', 10)
 generateHumanName('female', 10)
+generateHumanName('any', 10)
 ```
 
 `Generating 10 random animal name:`
